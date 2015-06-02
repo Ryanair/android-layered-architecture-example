@@ -48,9 +48,9 @@ public class GetNearbyStation {
 ```
 
 ##Presentation
-Holds view* interfaces and presenters** (see MVP pattern).
-* The view is a passive interface that displays data (the model) and routes user commands (events) to the presenter to act upon that data.
-** The presenter acts upon the model and the view. It retrieves data from the model, and formats it for display in the view.
+Holds view interfaces and presenters (see MVP pattern).
+The view is a passive interface that displays data (the model) and routes user commands (events) to the presenter to act upon that data.
+The presenter acts upon the model and the view. It retrieves data from the model, and formats it for display in the view.
 
 ##App
 All platform related code. Implementation of views. Instantiating API services and providing endpoint. Legacy code is kept here as well.
