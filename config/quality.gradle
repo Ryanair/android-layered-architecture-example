@@ -1,0 +1,19 @@
+apply plugin: 'checkstyle'
+
+task checkstyle(type: Checkstyle) {
+    source 'src'
+    include '**/*.java'
+    exclude "**/androidTest/**" // TODO: warnings belong to deprecated tests, remove them later
+    exclude '**/gen/**'
+    exclude '**/R.java'
+    exclude '**/BuildConfig.java'
+
+    def configProps = ['proj.module.dir': projectDir.absolutePath]
+    configProperties configProps
+
+    configFile file("${project.rootDir}/config/quality/checkstyle/checkstyle.xml")
+
+    classpath = files()
+}
+
+preBuild.dependsOn('checkstyle')
